@@ -7,20 +7,21 @@ h2 {
 .kotak {
     padding: 50px;
     width: 100px;
-    color: #ffff;
+    color: #ffffff;
     margin: 10px;
-    background: orange; 
+    background: orange;
 }
 
 #kotak {
     width: 400px;
-    color: #ffff;
+    color: #ffffff;
     background: blue;
     padding: 50px;
 
 }
 
 body {
-    background: lightcyan;
+    background: url('img/tree1.jpeg'), url('img/field1.jpeg');
+    background-repeat: no-repeat, repeat;
     color: white;
 }
