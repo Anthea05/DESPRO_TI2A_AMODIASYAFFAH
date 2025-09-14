@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+}
+
+/* Container Flex */
+.container {
+    display: flex;
+    width: 80%;
+    margin: 30px auto;
+    border: 2px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Sidebar kiri */
+.sidebar.satu {
+    flex: 1;
+    background-color: #cce7ff;
+    /* Biru muda */
+    padding: 15px;
+}
+
+/* Konten utama */
+.konten {
+    flex: 2;
+    background-color: #fff2cc;
+    /* Kuning pastel */
+    padding: 15px;
+}
+
+/* Sidebar kanan */
+.sidebar.dua {
+    flex: 1;
+    background-color: #d5f5e3;
+    /* Hijau pastel */
+    padding: 15px;
+}
+
+/* Styling umum */
+h3 {
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul li {
+    margin: 5px 0;
+}
