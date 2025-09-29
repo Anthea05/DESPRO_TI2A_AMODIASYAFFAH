@@ -14,8 +14,8 @@
         </tr>
         <tr>
             <td colspan="3">
-                <h3>Foto Profil Saya</h>
-
+                <h3>Foto Profil Saya</h3>
+            </td>
         </tr>
         <tr>
             <td colspan="3" align="left">
@@ -25,51 +25,51 @@
         <tr>
             <td><b>Nama Lengkap</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="namaLengkap"></td>
         </tr>
         <tr>
             <td><b>Kelas</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="kelas"></td>
         </tr>
         <tr>
             <td><b>Prodi</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="prodi"></td>
         </tr>
         <tr>
             <td><b>Jurusan</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="jurusan"></td>
         </tr>
         <tr>
             <td><b>Universitas</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="universitas"></td>
         </tr>
         <tr>
             <td><b>Tanggal Lahir</b></td>
             <td>:</td>
-            <td><input type="date"></td>
+            <td><input type="date" id="tanggalLahir"></td>
         </tr>
         <tr>
             <td><b>Tempat Lahir</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="tempatLahir"></td>
         </tr>
         <tr>
             <td><b>Jenis Kelamin</b></td>
             <td>:</td>
             <td>
-                <input type="radio" name="jk"> Laki-Laki <br>
-                <input type="radio" name="jk"> Perempuan
+                <input type="radio" name="jk" value="Laki-Laki" id="pria"> Laki-Laki <br>
+                <input type="radio" name="jk" value="Perempuan" id="wanita"> Perempuan
             </td>
         </tr>
         <tr>
             <td><b>Agama</b></td>
             <td>:</td>
             <td>
-                <select>
+                <select id="agama">
                     <option>----- Pilih Agama -----</option>
                     <option>Islam</option>
                     <option>Kristen</option>
@@ -84,52 +84,119 @@
             <td><b>Golongan Darah</b></td>
             <td>:</td>
             <td>
-                <input type="radio" name="goldar"> O <br>
-                <input type="radio" name="goldar"> A <br>
-                <input type="radio" name="goldar"> B <br>
-                <input type="radio" name="goldar"> AB
+                <input type="radio" name="goldar" value="O"> O <br>
+                <input type="radio" name="goldar" value="A"> A <br>
+                <input type="radio" name="goldar" value="B"> B <br>
+                <input type="radio" name="goldar" value="AB"> AB
             </td>
         </tr>
         <tr>
             <td><b>Hobi</b></td>
             <td>:</td>
             <td>
-                <input type="checkbox"> Membaca <br>
-                <input type="checkbox"> Nonton <br>
-                <input type="checkbox"> Beramal
+                <input type="checkbox" value="Membaca" class="hobi"> Membaca <br>
+                <input type="checkbox" value="Nonton" class="hobi"> Nonton <br>
+                <input type="checkbox" value="Beramal" class="hobi"> Beramal
             </td>
         </tr>
         <tr>
             <td><b>Alamat</b></td>
             <td>:</td>
-            <td><textarea rows="3" cols="40"></textarea></td>
+            <td><textarea rows="3" cols="40" id="alamat"></textarea></td>
         </tr>
         <tr>
             <td><b>Kota</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="kota"></td>
         </tr>
         <tr>
             <td><b>Provinsi</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="provinsi"></td>
         </tr>
         <tr>
             <td><b>Kewarganegaraan</b></td>
             <td>:</td>
-            <td><input type="text"></td>
+            <td><input type="text" id="kewarganegaraan"></td>
         </tr>
         <tr>
             <td><b>No. Telepon</b></td>
             <td>:</td>
-            <td><input type="text" value="089898989898"></td>
+            <td><input type="text" value="089898989898" id="noTelepon"></td>
         </tr>
         <tr>
             <td colspan="3" align="left">
-                <button type="submit">Tampilkan</button>
+                <button type="button" onclick="tampilkanBiodata()">Tampilkan</button>
             </td>
         </tr>
     </table>
+
+    <br>
+    <div id="hasilBiodata"></div>
+
+    <script>
+        function tampilkanBiodata() {
+            var namaLengkap = document.getElementById("namaLengkap").value;
+            var kelas = document.getElementById("kelas").value;
+            var prodi = document.getElementById("prodi").value;
+            var jurusan = document.getElementById("jurusan").value;
+            var universitas = document.getElementById("universitas").value;
+            var tanggalLahir = document.getElementById("tanggalLahir").value;
+            var tempatLahir = document.getElementById("tempatLahir").value;
+
+            var jenisKelamin = "";
+            var radioJk = document.getElementsByName("jk");
+            for (var i = 0; i < radioJk.length; i++) {
+                if (radioJk[i].checked) {
+                    jenisKelamin = radioJk[i].value;
+                }
+            }
+
+            var agama = document.getElementById("agama").value;
+
+            var golonganDarah = "";
+            var radioGoldar = document.getElementsByName("goldar");
+            for (var i = 0; i < radioGoldar.length; i++) {
+                if (radioGoldar[i].checked) {
+                    golonganDarah = radioGoldar[i].value;
+                }
+            }
+
+            var hobi = [];
+            var checkboxHobi = document.getElementsByClassName("hobi");
+            for (var i = 0; i < checkboxHobi.length; i++) {
+                if (checkboxHobi[i].checked) {
+                    hobi.push(checkboxHobi[i].value);
+                }
+            }
+
+            var alamat = document.getElementById("alamat").value;
+            var kota = document.getElementById("kota").value;
+            var provinsi = document.getElementById("provinsi").value;
+            var kewarganegaraan = document.getElementById("kewarganegaraan").value;
+            var noTelepon = document.getElementById("noTelepon").value;
+
+            var hasil = "<h2>Hasil Biodata:</h2>" +
+                "<b>Nama Lengkap:</b> " + namaLengkap + "<br>" +
+                "<b>Kelas:</b> " + kelas + "<br>" +
+                "<b>Prodi:</b> " + prodi + "<br>" +
+                "<b>Jurusan:</b> " + jurusan + "<br>" +
+                "<b>Universitas:</b> " + universitas + "<br>" +
+                "<b>Tanggal Lahir:</b> " + tanggalLahir + "<br>" +
+                "<b>Tempat Lahir:</b> " + tempatLahir + "<br>" +
+                "<b>Jenis Kelamin:</b> " + jenisKelamin + "<br>" +
+                "<b>Agama:</b> " + agama + "<br>" +
+                "<b>Golongan Darah:</b> " + golonganDarah + "<br>" +
+                "<b>Hobi:</b> " + hobi.join(", ") + "<br>" +
+                "<b>Alamat:</b> " + alamat + "<br>" +
+                "<b>Kota:</b> " + kota + "<br>" +
+                "<b>Provinsi:</b> " + provinsi + "<br>" +
+                "<b>Kewarganegaraan:</b> " + kewarganegaraan + "<br>" +
+                "<b>No. Telepon:</b> " + noTelepon;
+
+            document.getElementById("hasilBiodata").innerHTML = hasil;
+        }
+    </script>
 </body>
 
 </html>
