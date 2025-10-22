@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorot.in - Social Media Strategy</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">Sorot.in</div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Selamat Datang di Sorot.in</h1>
+                <p>bantu bisnismu tumbuh lewat strategi dan konten media sosial yang ngena di hati audiens.</p>
+            </div>
+            <img src="assets/img/foto1.png" alt="Ilustrasi Media Sosial" class="hero-image">
+        </section>
+
+        <div class="section-background">
+            <section id="layanan">
+                <h2>Solusi dan Layanan IT yang Dapat Kami Berikan untuk Anda!</h2>
+                <div class="grid-layanan"></div>
+            </section>
+
+            <form id="form-pemesanan" method="POST" action="proses_pesanan.php">
+                <section id="keranjang">
+                    <h2>Keranjang Pesanan</h2>
+                    <div class="kartu-form">
+                        <table>
+                            <tbody id="keranjang-item"></tbody>
+                        </table>
+                        <p id="keranjang-kosong">Keranjang masih kosong.</p>
+                    </div>
+                </section>
+
+                <section id="data-diri">
+                    <h2>Masukkan Data Diri Anda</h2>
+                    <div class="kartu-form">
+                        <div class="grup-form">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama">
+                        </div>
+                        <div class="grup-form">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                
+                        <div class="grup-form">
+                            <label for="kota">Kota</label>
+                            <select id="kota" name="kota">
+                                <option value="" disabled selected>-- Pilih Kota --</option>
+                                <option value="Malang">Malang</option>
+                                <option value="Surabaya">Nganjuk</option>
+                                <option value="Jakarta">Jombang</option>
+                                <option value="Bandung">Surabaya</option>
+                            </select>
+                        </div>
+                        <div class="grup-form">
+                            <label for="pesan">Komentar</label>
+                            <textarea id="pesan" name="pesan" rows="4"></textarea>
+                        </div>
+                        <input type="hidden" name="keranjang_data" id="keranjang_data_hidden">
+                        <div id="pesan-error" class="pesan-error" style="display: none;"></div>
+                        <button type="submit" class="tombol tombol-utama">Pesan Sekarang</button>
+                    </div>
+                </section>
+        </form>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Sorot.in - All Rights Reserved</p>
+    </footer>
+
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

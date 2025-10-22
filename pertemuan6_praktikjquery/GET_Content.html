@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery DOM Get</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tombol1").click(function(){
+                alert("Text: " + $("#test").text());
+            });
+            $("#tombol2").click(function(){
+                alert("HTML: " + $("#test").html());
+            });
+            $("#tombol3").click(function(){
+                alert("Value: " + $("#nama").val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="test">Ini adalah <b>paragraf</b>.</p>
+    <p>Nama: <input type="text" id="nama" value="John Resig"></p>
+    <button id="tombol1">Get Text</button>
+    <button id="tombol2">Get HTML</button>
+    <button id="tombol3">Get Value</button>
+</body>
+</html>

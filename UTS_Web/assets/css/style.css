@@ -1,0 +1,368 @@
+/* Definisi variabel warna baru sesuai Figma */
+:root {
+    --warna-primer: #7e3ff2;
+    /* Ungu utama dari Figma */
+    --warna-background-lembut: #f4f0fd;
+    /* Ungu sangat terang untuk latar belakang section */
+    --warna-background: #ffffff;
+    --warna-teks-gelap: #333333;
+    --warna-putih: #ffffff;
+    --warna-error: #e74c3c;
+    --warna-sukses: #2ecc71;
+    /* Hijau dari halaman sukses */
+    --warna-border: #e0e0e0;
+}
+
+/* Reset dan Pengaturan Dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--warna-background);
+    color: var(--warna-teks-gelap);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigasi / Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--warna-border);
+    margin-bottom: 4rem;
+}
+
+.navbar .logo {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: var(--warna-primer);
+}
+
+/* Bagian Hero (Selamat Datang) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 450px;
+}
+
+.hero-image {
+    max-width: 400px;
+}
+
+/* Tombol */
+.tombol {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    color: var(--warna-putih);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tombol-utama {
+    background-color: var(--warna-primer);
+}
+
+.tombol-tambah {
+    background-color: var(--warna-primer);
+    width: 100%;
+}
+
+.tombol:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Bagian Layanan & Katalog */
+.section-background {
+    background-color: var(--warna-background-lembut);
+    padding: 4rem 0;
+    border-radius: 12px;
+}
+
+.kartu-layanan {
+    /* ...properti yang sudah ada... */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Tambahkan transisi */
+}
+
+.kartu-layanan:hover {
+    transform: translateY(-8px);
+    /* Angkat kartu sedikit ke atas */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* Perjelas bayangan */
+}
+
+#layanan h2,
+#keranjang h2,
+#data-diri h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--warna-primer);
+    font-size: 2.2rem;
+}
+
+/* layout katalog */
+.grid-layanan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 0 40px;
+}
+
+.kartu-layanan {
+    background: var(--warna-putih);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+}
+
+.kartu-layanan h4 {
+    color: var(--warna-primer);
+    margin-bottom: 8px;
+}
+
+.kartu-layanan .harga {
+    font-weight: bold;
+    color: var(--warna-primer);
+    margin-bottom: 15px;
+}
+
+.kartu-layanan .deskripsi {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Keranjang & Form */
+#keranjang,
+#data-diri {
+    margin-top: 4rem;
+    padding: 0 40px;
+}
+
+.kartu-form {
+    background: var(--warna-putih);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--warna-border);
+}
+
+.tombol-hapus {
+    background: none;
+    border: none;
+    color: var(--warna-error);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#keranjang-kosong {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+}
+
+/* Grup Form */
+.grup-form {
+    margin-bottom: 1.5rem;
+}
+
+.grup-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.grup-form input,
+.grup-form textarea,
+.grup-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--warna-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white; 
+}
+.grup-form input:focus,
+.grup-form textarea:focus,
+.grup-form select:focus {
+    outline: none;
+    border-color: var(--warna-primer);
+    box-shadow: 0 0 0 2px rgba(126, 63, 242, 0.2);
+}
+
+/* Hasil */
+.kartu-hasil {
+    max-width: 600px;
+    margin: 4rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.hasil-header {
+    padding: 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: var(--warna-putih);
+}
+
+.hasil-header.sukses {
+    background-color: var(--warna-sukses);
+}
+
+.hasil-header.error {
+    background-color: var(--warna-error);
+}
+
+.hasil-header i {
+    font-size: 3.5rem;
+}
+
+.hasil-header h3 {
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+.hasil-body {
+    padding: 30px;
+    text-align: left;
+    background: var(--warna-putih);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.hasil-body p {
+    margin-bottom: 20px;
+}
+
+.hasil-body h4 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.hasil-body ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.hasil-body li {
+    padding: 30px 30px 15px 30px;
+}
+
+.tombol-kembali {
+    margin-top: 0px;
+    background-color: var(--warna-primer);
+}
+
+/* Validasi Error */
+.input-error {
+    border-color: var(--warna-error) !important;
+}
+
+.pesan-error {
+    background-color: #fbecec;
+    color: var(--warna-error);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--warna-error);
+}
+
+.hasil-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.hasil-container h1 {
+    color: var(--warna-sukses);
+    margin-bottom: 1rem;
+}
+
+.hasil-container h1 .fas {
+    margin-right: 10px;
+}
+
+.hasil-container>p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.daftar-pesanan {
+    margin-bottom: 3rem;
+}
+
+.kartu-pesanan {
+    background: var(--warna-putih);
+    border: 1px solid var(--warna-border);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.kartu-pesanan h3 {
+    color: var(--warna-primer);
+    border-bottom: 1px solid var(--warna-border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.kartu-pesanan ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.kartu-pesanan ul ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}

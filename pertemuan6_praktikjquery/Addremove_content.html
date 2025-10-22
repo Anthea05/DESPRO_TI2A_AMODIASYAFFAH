@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Add/Remove</title>
+    <link rel="stylesheet" type="text/css" href="styleTable.css" />
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var i = 1;
+            $("#add_row").click(function () {
+                $('#addr' + i).html("<td>" + (i + 1) + "</td><td><input name='nama" + i + "' type='text' placeholder='Nama' class='form-control input-md' /></td><td><input name='email" + i + "' type='text' placeholder='Email' class='form-control input-md' /></td>");
+                $('#tab_logic').append('<tr id="addr' + (i + 1) + '"></tr>');
+                i++;
+            });
+
+            $("#delete_row").click(function () {
+                if (i > 1) {
+                    $("#addr" + (i - 1)).html('');
+                    i--;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <table class="table table-bordered table-hover" id="tab_logic">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Nama</th>
+                            <th class="text-center">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id='addr0'>
+                            <td>1</td>
+                            <td><input type="text" name='nama0' placeholder='Nama' class="form-control" /></td>
+                            <td><input type="text" name='email0' placeholder='Email' class="form-control" /></td>
+                        </tr>
+                        <tr id='addr1'></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a id="add_row" class="btn btn-default pull-left">Add Row</a>
+        <a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Animate</title>
+    <link rel="stylesheet" type="text/css" href="styleAnimate.css" />
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").animate({ left: '250px' });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Start Animation</button>
+    <p></p>
+    <div></div>
+</body>
+
+</html>

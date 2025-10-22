@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery CSS Manipulation</title>
+    <link rel="stylesheet" type="text/css" href="styleCSS.css" />
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#tombol1").click(function () {
+                $("h1, h2, p").addClass("biru");
+                $("div").addClass("penting");
+            });
+
+            $("#tombol2").click(function () {
+                $("h1, h2, p").removeClass("biru");
+            });
+
+            $("#tombol3").click(function () {
+                $("div").css({
+                    "background-color": "pink",
+                    "font-size": "20px"
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Judul 1</h1>
+    <h2>Judul 2</h2>
+    <p>Ini adalah paragraf.</p>
+    <div>Ini adalah konten penting!</div>
+    <br>
+    <button id="tombol1">Add Class</button>
+    <button id="tombol2">Remove Class</button>
+    <button id="tombol3">Set CSS</button>
+</body>
+
+</html>

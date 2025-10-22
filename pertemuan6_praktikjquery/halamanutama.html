@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery AJAX Load</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#div1").load("test-content.html");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <h2>Konten Awal</h2>
+    </div>
+    <button>Klik Saya!</button>
+</body>
+
+</html>

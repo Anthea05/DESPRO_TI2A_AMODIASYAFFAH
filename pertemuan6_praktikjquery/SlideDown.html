@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Slide</title>
+    <link rel="stylesheet" type="text/css" href="styleSlide.css" />
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideDown("slow");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="flip">Klik untuk Efek Slide</div>
+    <div id="panel">Hello World!</div>
+</body>
+
+</html>

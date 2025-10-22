@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Slideshow</title>
+    <link rel="stylesheet" type="text/css" href="styleSlideShow.css" />
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(function () {
+            var galleryImages = $(".gallery").find("img");
+            galleryImages.each(function (i) {
+                $(this).attr("src", "img/gambar" + (i + 1) + ".jpg");
+            });
+
+            var i = 0;
+            setInterval(function () {
+                i++;
+                galleryImages.fadeOut(1000, function () {
+                    $(this).attr("src", "img/gambar" + (i % galleryImages.length + 1) + ".jpg");
+                }).fadeIn(1000);
+            }, 3000);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="gallery">
+        <img src="img/gambar1.jpg" width="500" height="400">
+    </div>
+</body>
+
+</html>
